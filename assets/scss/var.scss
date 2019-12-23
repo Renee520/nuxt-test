@@ -1,0 +1,48 @@
+$color-primary: #2395ff; // 主色
+$color-warning: #ffd01e; // 警告
+$color-error: #ee0a24;
+$color-success: #07c160;
+$color-info: #7d7e80; // 说明色 
+$color-secondary: #666; // 次要
+$color-border: #ddd;
+$color-border-base: #eee;
+$color-light: #d2d2d2;
+$color-light-yellow: #f7e8c9; // 淡黄色
+$color-white-yellow: #fffbf4;
+$color-dark-yellow: #644f1b; // 黄黑色
+$color-light-blue: #e2f1f9;
+$color-text-brown: #b47738;
+$color-green: #43bc40;
+$color-orange: #ef8e13; // 橘色
+$color-light-blue: #e1eefb; // 淡蓝
+
+$color-text-primary: #333; // 字体色
+$color-text-gray: #ccc; // 字体色
+$background-color: #f5f5f5; // 背景色
+$background-yellow: #f3dda0; // 黄色背景
+$background-image: linear-gradient(90deg, #0af, $color-primary);
+
+$font-size: 14px;
+$font-sm: 10px;
+$font-md: 12px;
+$font-ml: 16px;
+$font-lg: 18px;
+$font-size-auto: 1em;
+$font-rem: 0.83rem;
+
+$space-primary: 10px;
+$space-md: 15px;
+$space-lg: 20px;
+$space-sm: 8px;
+$space-xs: 5px;
+
+$list-height: 40px;
+
+$font-family: PingFang SC,Helvetica Neue,Arial,sans-serif;
+
+$text-color: (primary, $color-primary), (error, $color-error), (info, $color-info), (warning, $color-warning), (success, $color-success);
+
+:export {
+  fontSize: $font-size;
+  primaryColor: $color-primary;
+}

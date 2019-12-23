@@ -1,0 +1,2416 @@
+// 默认背景浅灰色
+body {
+  background: $background-color;
+}
+
+// 底部导航条置于顶层
+.nav {
+  .van-tabbar {
+    z-index: 100 !important;
+  }
+}
+
+// 登录页面
+.login {
+  background-color: #fff;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 40px;
+  &-logo {
+    width: 40%;
+    margin: $space-md auto $space-primary;
+    border-radius: 5px;
+    img {
+      width: 100%;
+    }
+  }
+  &-form {
+    .float--left {
+      width: 60%;
+    }
+    .disabledToClick {
+      color: $color-light;
+    }
+    .regain {
+      color: $color-primary;
+    }
+  }
+  &-button {
+    margin: $space-md auto;
+    .van-button {
+      height: 42px !important;
+      line-height: 42px !important;
+      border-radius: 4px;
+    }
+  }
+  &-about {
+    font-size: $font-size - 2;
+  }
+}
+
+// “我的”
+.user {
+  &-header {
+    padding: $space-lg;
+    position: relative;
+    background-color: $color-primary;
+    * {
+      color: #fff;
+    }
+    &__img {
+      width: 10vh;
+      height: 10vh;
+      border-radius: 50%;
+      overflow: hidden;
+      img {
+        width: 100%;
+      }
+    }
+    &__title {
+      width: 60%;
+      margin-left: $space-lg;
+      h3 {
+        font-size: $font-size-auto * 1.55;
+        margin-bottom: $space-sm;
+      }
+      p {
+        font-size: $font-md;;
+        i {
+          vertical-align: middle;
+        }
+      }
+    }
+    &__arrow {
+      position: absolute;
+      right: $space-md;
+      top: 50%;
+      transform: translate(0, -50%);
+      color: $color-info;
+    }
+  }
+  &-money {
+    img {
+      width: 30px;
+    }
+    .flex-item {
+      padding: $space-lg 0;
+    }
+    .flex-item:first-child{
+      border-right: $border;
+    }
+    .font-sm {
+      font-size: $font-md;
+      font-weight: bold;
+    }
+  }
+  &-list {
+    img {
+      width: 22px;
+      margin-right: $space-primary;
+      vertical-align: middle;
+    }
+  }
+  .van-cell-group {
+    margin-top: $space-primary;
+    .van-cell__title {
+      font-size: 16px;
+    }
+    i {
+      font-size: 13px;
+      color: #bbb;
+    }
+  }
+  .profile {
+    // background-image: url('../../assets/imgs/user/logo.png');
+    color: $color-primary;
+    padding-top: 20px;
+  }
+}
+.money, section {cursor: pointer;}
+
+// userInfo登陆后用户信息
+.userInfo-index {
+  font-size: $font-ml;
+  &-header {
+    padding: 0 $space-md;
+    // background-image: url(../imgs/find/1.webp);
+    &-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &__right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .headImg {
+          width: 9vh;
+          height: 9vh;
+          border-radius: 50%;
+          overflow: hidden;
+          margin: $space-sm 0;
+          img {
+            width: 100%;
+          }
+        }
+        i {
+          color: $color-info;
+        }
+      }
+    }
+    &-uname {
+      padding: $space-md 0;
+      .content {
+        color: $color-info;
+      }
+    }
+  }
+  .title {
+    font-size: $font-md;
+    color: $color-info;
+    padding: $space-primary $space-md;
+  }
+  &-account {
+    .box {
+      padding: $space-md;
+      i {
+        color: $color-primary;
+        vertical-align: middle;
+        margin-right: $space-xs;
+      }
+      .phoneNumber, .phoneNumber i {
+        color: $color-info;        
+      }
+    }
+  }
+  &-safe {
+    .box {
+      padding: $space-md;
+      a {
+        color: $color-primary;
+        i {
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+  &-loginBtn {
+    color: $color-error;
+    border: none;
+    margin-top: $space-lg;
+    padding: $space-md 0;
+  }
+}
+
+// 首页
+.home-index {
+  margin-bottom: 50px; // 元素不会被底部nav挡住
+  height: calc(100vh - 50px);
+  overflow: auto;
+  // 首页
+  &-header {
+    background-image: $background-image;
+    &__title {
+      display: -webkit-flex;
+      display: flex;
+      align-items: center;
+      padding: $space-md $space-md 0;
+      color: #fff;
+      h3 {
+        max-width: 50%;
+        margin-left: 3px;
+        font-size: bold;
+      }
+      .triangle {
+        margin-left: $space-xs;
+      }
+    }
+    // search的van-sticky的z-index太高了，会在地址页显示出来
+    .van-sticky--fixed {
+      z-index: 10;
+    }
+    &__search {
+      padding: $space-primary;
+      background-image: $background-image;
+      div{
+        border-radius: 2px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+        color: $color-text-gray;
+        span {
+          padding: $space-sm 5px;
+          font-size: $font-rem;
+        }
+      }
+    }
+  }
+  // 未选择地址时显示
+  .noaddress {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 14vh;
+    img {
+      width: 55%;
+    }
+    p {
+      font-size: $font-size-auto * 1.23;
+      color: $color-info;
+      margin-bottom: $space-primary;
+    }
+    .v-button {
+      height: 40px;
+      border-radius: 2px;
+    }
+  }
+  &-swipe {
+    background-color: #fff;
+    width: 100%;
+    font-size: $font-sm;
+    color: $color-info;
+    .van-grid {
+      border: none;
+    }
+    [class*=van-hairline]::after {
+      border: none;
+    }
+    .van-swipe__indicators {
+      position: relative;
+      justify-content: center;
+      bottom: auto;
+      padding: $space-primary;
+      .van-swipe__indicator {
+        width: 10px;
+        height: 2px;
+        background-color: $color-info;
+      }
+      .van-swipe__indicator--active {
+        background-color: $color-warning;
+      }
+      .van-swipe__indicator:not(:last-child) {
+        margin-right: 4px;
+      }
+    }
+    &-list {
+      width: 100%;
+      .van-hairline--top, .van-hairline--top-bottom {
+        float: left;
+        width: 20%;
+      }
+      &__item {
+        box-sizing: border-box;
+        padding: 0 $space-primary;
+        flex-basis: auto !important;
+        .van-grid-item__content {
+          padding: 3px 5px;
+        }
+        img {
+          padding-bottom: 5px;
+          width: 100%;
+        }
+        p {
+          color: #666;
+        }
+      }
+    }
+  }
+  &-handle {
+    background-color: #fff;
+    padding: 0 $space-primary;
+    &-content {
+      background-image: linear-gradient(0deg, $background-color, #fafafa);
+      padding: $space-primary;
+      padding-left: $space-md;
+      display: flex;
+      justify-content: space-between;
+      &__desc {
+        padding-top: $space-primary;
+        p {
+          font-size: 13px;
+        }
+        p:first-child {
+          font-weight: bold;
+          font-size: $font-lg;
+          padding-bottom: 3px;
+        }
+        p:last-child {
+          padding-top: 7px;
+          font-size: $font-md;
+          color: $color-warning;
+          font-weight: bold;
+          .van-icon-arrow {
+            vertical-align: middle;
+          }
+        }
+      }
+      &__img {
+        width: 40%;
+        img {width: 100%;}
+      }
+    }
+    &-wrap {
+      margin-top: 3px;
+      border-radius: 2px;
+      position: relative;
+      padding: $space-primary;
+      display: flex;
+      align-items: center;
+      background-image: -webkit-linear-gradient(left top, #ffefc4, $background-yellow);
+      color: $color-dark-yellow;
+      p {
+        padding-left: 5px;
+      }
+      .bold {
+        font-weight: 700;
+        font-size: $font-rem;
+      }
+      span {
+        padding-left: 5px;
+      }
+      .span-right {
+        position: absolute;
+        right: 5px;
+        a {
+          color: $color-dark-yellow;
+        }
+      }
+    }
+  }
+  &-shop {
+    background-color: #fff;
+    &-recommend {
+      p {
+        padding: $space-md 0;
+        &::after, &::before {
+          content: '';
+          display: inline-block;
+          width: $space-lg;
+          border-top: 1px solid #000;
+          margin-right: $space-md;
+          position: relative;
+          top: -4px;
+        }
+        &::after {
+          margin-right: 0;
+          margin-left: $space-md;
+        }
+      }
+    }
+    &-list {
+      &__item {
+        .img {
+          width: 23%;
+          padding-left: $space-primary;
+          box-sizing: border-box;
+          float: left;
+          position: relative;
+          img {
+            width: 100%;
+            border: $border;
+          }
+          .van-tag {
+            position: absolute;
+            right: 0;
+            top: -5px;
+          }
+        }
+        padding: $space-md 0;
+        border-bottom: $border;
+        &::after {
+          content: '';
+          display: block;
+          clear: both;
+        }
+      }
+      .content {
+        box-sizing: border-box;
+        float: right;
+        width: 77%;
+        padding: 0 $space-primary;
+        box-sizing: border-box;
+        color: $color-info;
+        font-size: $font-size-auto * 0.8;
+        p {
+          margin-bottom: $space-sm;
+        }
+        .shop-title { // 商家名称
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .isBrand {
+            background-color: $color-warning;
+            font-size: $font-md;
+            padding: 2px;
+          }
+          p:first-child { // 商家标题
+            font-size: $font-ml - 1;
+            font-weight: bold;
+            max-width: 80%;
+            color: $color-text-primary;
+            margin-bottom: $space-xs;
+          }
+          // 弹出层-不喜欢
+          .van-cell {
+            padding: 0;
+            width: auto;
+          }
+          .van-overlay {
+            height: 30%;
+            transform: translate(0, 100%);
+            top: 25px;
+          }
+          .van-popup {
+            font-size: $font-md;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+          }
+        }
+        .rate { // 评分一栏
+          .van-rate { // 评分
+            margin-bottom: $space-primary;
+          }
+          .score, .order {
+            margin-left: $space-xs;
+          }
+          .isFNSpecialDelivery { // 蜂鸟专送
+            background-color: $color-primary;
+            padding: 0 1px;
+            color: #fff;
+          }
+        }
+        .send { // 配送一栏
+          .sendBasePrice {
+            &::after {
+              content: '|';
+              display: inline-block;
+              margin: 0 3px;
+            }
+          }
+        }
+        .description { // 关键字一栏
+          margin-bottom: $space-primary;
+          .keyword {
+            display: inline;
+          }
+          span {
+            margin: 0 3px;
+            border: 1px solid #ccc;
+            padding: 0 2px;
+            border-radius: 1px;
+          }
+          .isPerfect {
+            color: $color-error;
+            border: none;
+            img {
+              width: 2.8vw;
+            }
+          }
+        }
+        .activities { // 活动
+          border-top: $border-dotted;
+          &__tips {
+            .atvnumber {}
+            .triangle {
+              border-top-color: $color-info;
+              transform: rotate(0);
+              display: inline-block;
+              transition: all .3s ease-in-out;
+              top: 2px;
+            }
+            .toUp {
+              transform: rotate(180deg);
+              transition: all .3s ease-in-out;
+              top: -2px;
+            }
+          }
+          &__content {
+            width: 80%;
+            p {
+              margin: 5px 0;
+              span {
+                background-color: $color-secondary;
+                color: #fff;
+                padding: 2px;
+                margin-right: 3px;
+                border-radius: 2px;
+              }
+            }
+          }
+        }
+      }
+    }
+    &-nav {
+      .van-hairline--top-bottom::after, .van-hairline-unset--top-bottom::after {
+        border: none;
+      }
+      position: sticky;
+      top: 53px;
+      z-index: 10;
+      padding: $space-lg 0;
+      background-color: #fff;
+      .van-tabbar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-around;
+        height: 40px;
+        font-size: 16px;
+        .van-tabbar-item--active {
+          font-weight: bold;
+          .van-dropdown-item__option {
+            font-weight: normal;
+          }
+        }
+        .van-tabbar-item {
+          .van-tabbar-item__icon {
+            display: none;
+          }
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: $font-size;
+          .van-dropdown-menu {
+            .van-dropdown-menu__title {
+              font-size: $font-size;
+            }
+            height: auto;
+            .van-dropdown-item {
+              border-top: $border;
+              .van-cell:not(:last-child)::after {
+                border-bottom: none;
+              }
+            }
+            .van-dropdown-menu__title--active, .van-dropdown-item__option--active, .van-dropdown-item__option--active .van-dropdown-item__icon {
+              font-weight: bold;
+              color: $color-primary;
+            }
+          }
+        }
+        .selectStore {
+          width: 25%;
+          .van-dropdown-menu {
+            height: 40px;
+            .van-dropdown-menu__title--active {
+              font-weight: bold;
+            }
+          }
+          .van-dropdown-item__content {
+            .selectStore-extend {
+              .selectStore-extend__content {
+                padding: $space-sm $space-primary;
+                .title {
+                  padding-right: $space-xs;
+                  font-size: $font-md;
+                  line-height: 16px;
+                  color: $color-info;
+                  text-align: left;
+                }
+                .content {
+                  font-size: $font-size-auto * 0.8;
+                  margin: $space-sm 0;
+                  &:last-child {
+                    margin-bottom: 0;
+                  }
+                  .van-row {
+                    .van-col {
+                      .perSpend-item__active {
+                        background-color: $color-light-blue;
+                        color: $color-primary;
+                        font-weight: bold;
+                      }
+                      div {
+                        input {
+                          width: 0;
+                        }
+                        margin: 3px;
+                        background-color: $background-color;
+                        line-height: 36px;
+                        img {
+                          width: 3.5vw;
+                          margin-right: $space-xs;
+                        }
+                      }
+                    }
+                  } 
+                }
+              }
+              .btnBox {
+                .clear {
+                  color: $color-text-gray;
+                }
+                .clearable {
+                  color: $color-text-primary;
+                }
+                border-top: $border;
+                button {
+                  width: 50%;
+                  display: inline-block;
+                  border: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  // 未登录，不显示商家
+  &-noshoplist {
+    padding-bottom: $space-primary;
+    text-align: center;
+    img {
+      width: 55%;
+    }
+    .noresult {
+      font-size: $font-ml;
+      color: $color-secondary;
+      margin-bottom: $space-primary;
+    }
+    .info {
+      color: $color-info;
+      font-size: $font-md;
+      margin-bottom: $space-primary;
+    }
+    .v-button {
+      padding: 0 50px;
+      height: 40px;
+      border-radius: 2px;
+    }
+  }
+  // 没有商家
+  &-noStores {
+    img {
+      width: 53vw;
+    }
+    .info-nostores {
+      font-size: $font-size-auto * 1.2;
+      margin-bottom: $space-sm;
+    }
+    .info {
+      font-size: $font-md;
+      color: $color-info;
+      padding-bottom: 25px;
+    }
+  }
+  // 没有更多商家了
+  &-noMoreStore {
+    padding: $space-primary $space-lg;
+    font-size: $font-size-auto * 0.9;
+    color: $color-secondary;
+    border-bottom: $border;
+  }
+  &-goTop {
+    position: fixed;
+    bottom: 100px;
+    right: $space-lg;
+    width: 44px;
+    height: 44px;
+    background-color: #fff;
+    border-radius: 50%;
+    padding: $space-primary;
+    box-sizing: border-box;
+    border: $border;
+    opacity: 1;
+    img {
+      width: 100%;
+    }
+  }
+  // 当点击“筛选”, search和“推荐商家”nav置顶
+  .showSelectStorePopup {
+    .home-index-header__title, .home-index-swipe, .home-index-handle, .home-index-shop-recommend {
+      position: absolute;
+    }
+    .van-dropdown-item {
+      top: 92px !important; // search和“推荐商家”nav的高度
+    }
+  }
+}
+
+.display-none {
+  display: none;
+}
+
+// 置顶动画
+.goTop-fade-enter, .goTop-fade-leave-to {
+  opacity: 0;
+}
+.goTop-fade-enter-active, .goTop-fade-leave-active {
+  transition: all 1.5s ease;
+}
+// 选择地址组件
+.selectAddress-index {
+  &-address {
+    z-index: 20;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: $background-color;
+    .van-nav-bar__text {
+      color: #fff;
+      font-size: $font-ml;
+    }
+    &-search {
+      .city {
+        width: 20%;
+        box-sizing: border-box;
+        line-height: 54px;
+        height: 54px;
+        font-size: 13px;
+        .cityName {
+          padding-left: $space-md;
+          box-sizing: border-box;
+          width: 16vw;
+        }
+        .triangle {
+          border: 3px solid transparent;
+          border-top-color: $color-text-primary;
+          top: 50%;
+          margin-right: $space-xs;
+        }
+      }
+      .van-search {
+        width: 80%;
+        .van-search__content--round {
+          border-radius: 2px;
+        }
+        .van-search__content {
+          background-color: $background-color;
+          .van-cell {
+            font-size: $font-size-auto * 0.9;
+          }
+        }
+      }
+    }
+    .title {
+      font-size: 13px;
+      padding: 12px;
+      border-top: $border;
+      border-bottom: $border;
+    }
+    &-currAddr {
+      &__content {
+        font-size: $font-size-auto * 1.1;
+        justify-content: space-between;
+        padding: $space-primary + 2;
+        p {
+          font-weight: bold;
+          width: 70%;
+        }
+        a {
+          color: $color-primary;
+          i {
+            vertical-align: sub;
+            margin-right: $space-xs;
+            font-size: $font-lg;
+          }
+        }
+      }
+    }
+    &-shAddr {
+      .list {
+        .list-item {
+          padding: $space-primary * 1.2 $space-md;
+          border-bottom: $border;
+          p {
+            font-size: $font-md;
+            :not(:first-child) {
+              margin-left: $space-xs;
+            }
+          }
+          .name {
+            font-size: $font-ml;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
+.van-nav-bar {
+  background-image: $background-image;
+  color: #fff;
+  .van-nav-bar__left {
+    left: $space-sm;
+    .van-icon {
+      color: #fff;
+      font-size: 25px;
+    }
+  }
+  .van-nav-bar__title {
+    font-size: $font-lg;
+    color: #fff;
+  }
+}
+// 选择城市组件
+.selectCity-index {
+  &-city {
+    z-index: 20;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    &-header {
+      .van-hairline--bottom::after {
+        display: none;
+      }
+      .van-search {
+        padding: $space-sm $space-lg + 5;
+        background-image: $background-image !important;
+        .van-search__content {
+          background-color: #fff;
+          .van-field__control {
+            font-size: $font-size-auto * 0.9;
+          }
+        }
+        .van-cell {
+          padding: 3px $space-sm 3px 0
+        }
+      }
+    }
+    &-select {
+      &__current {
+        .title {
+          background-color: $background-color;
+          padding: $space-primary $space-md;
+          border-bottom: $border;
+          color: $color-info;
+        }
+        .content {
+          padding: $space-md;
+        }
+      }
+      &__index {
+        .van-index-anchor {
+          background-color: $background-color;
+          border-bottom: $border;
+          color: $color-info;
+          padding: $space-xs - 2 $space-md;
+          font-weight: 600;
+        }
+        .van-cell {
+          border-bottom: $border;
+          padding: $space-primary + 3 $space-md;
+        }
+        .van-index-bar__sidebar {
+          top: 100vw;
+          margin-right: $space-primary + 2;
+          color: $color-text-gray;
+          .van-index-bar__index {
+            font-size: $font-md;
+            margin-bottom: $space-xs;
+            font-weight: 600;
+          }
+          [data-index*="I"], [data-index*="O"][data-index*="U"], [data-index*="V"] {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+.van-grid-item__content::after {border: none;}
+// 从页面左侧移入的动画
+.slide-fade-enter, .slide-fade-leave-to {
+  transform: translate(100vw, 0);
+}
+.slide-fade-enter-active, .slide-fade-leave-active {
+  transition: all .3s linear;
+}
+
+// 发现
+.find {
+  &-parts {
+    border-top: $border;
+    border-bottom: $border;
+    .van-row .van-col--12 {
+      border-left: $border;
+    }
+    .content {
+      padding: $space-lg $space-md;
+      p.font--md {
+        color: $color-info;
+        margin-top: $space-xs;
+      }
+    }
+    .img {
+      width: 12vw;
+      margin-right: $space-md;
+      img {
+        width: 100%;
+      }
+    }
+    &__shopcity {
+      .img {
+        width: 20vw;
+        img {
+          width: 100%;
+        }
+      }
+    }
+    &__right {
+      flex-direction: column;
+      justify-content: space-between;
+      &--recommend {
+        border-bottom: $border;
+      }
+      &--recommend, &--around {
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+  }
+  &-activities {
+    border-top: $border;
+    border-bottom: $border;
+    margin-top: $space-primary;
+    flex-direction: column;
+    align-items: center;
+    padding: $space-lg $space-md;
+    &__title {
+      p.font--lg {
+        font-weight: bold;
+        align-items: center;
+        span {
+          width: $space-xs;
+          height: $space-xs;
+          background: $color-text-primary;
+          border-radius: 50%;
+          display: block;
+        }
+        .next {
+          margin-left: $space-xs;
+        }
+        span.prev::before,span.next::after {
+          content: '';
+          width: $space-md;
+          height: 2px;
+          display: block;
+          background: $color-text-primary;
+          position: relative;
+          top: 1px;
+        }
+        span.prev::before {
+          left: -$space-xs - $space-sm;
+        }
+        i {
+          color: $color-error;
+          padding: 0 $space-xs;
+        }
+      }
+      p.font--md {
+        color: $color-info;
+      }
+    }
+    &__content {
+      .van-row {
+        font-size: 13px;
+        .van-cell {
+          padding: 0;
+          padding-top: $space-lg;
+        }
+        .van-cell__title span {
+          background-color: $color-text-primary;
+          color: #fff;
+          font-size: $font-md;
+        }
+        .van-cell:not(:last-child)::after {
+          display: none;
+        }
+        .van-hairline--top-bottom::after, .van-hairline-unset--top-bottom::after {
+          border: none;
+        }
+        .van-panel__content {
+          padding-right: $space-xs;
+          img {
+            width: 100%;
+            margin-bottom: $space-lg;
+          }
+          p.gold {
+            color: $color-error;
+            padding-top: $space-primary;
+            span {
+              text-decoration: line-through;
+              color: $color-info;
+              font-size: $font-sm;
+              padding-left: $space-xs;
+            }
+          }
+        }
+      }
+    }
+    &__more {
+      padding-top: 30px;
+      font-size: 13px;
+      color: $color-info;
+      i {
+        vertical-align: middle;
+        font-size: $font-sm;
+      }
+    }
+  }
+}
+// 搜索
+.search-index {
+  background-color: #fff;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 110;
+  overflow: hidden;
+  &-header {
+    &__back {
+      i {
+        font-size: $font-lg + 7;
+        padding: $space-xs;
+        color: $color-info;
+      }
+    }
+    &__search {
+      .van-search__content {
+        background-color: $background-color;
+        .van-cell {
+          font-size: $font-size-auto * 0.9;
+          padding: 3px 8px 3px 0;
+        }
+      }
+      .van-search__action {
+        font-weight: bold;
+        font-size: $font-ml;
+        padding: 0 $space-primary;
+      }
+    }
+  }
+  &-history {
+    &__title {
+      padding: $space-primary;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      span {
+        color: $color-secondary;
+        font-size: $font-ml;
+        font-weight: bold;
+      }
+      i {
+        color: $color-text-gray;
+        font-weight: bold;
+      }
+    }
+    &__content {
+      padding: 0 3.5vw 3.5vw;
+    }
+  }
+  .v-button--info {
+    padding: $space-sm $space-primary;
+    margin: $space-primary $space-md 0 0;
+    border-radius: 3px;
+  }
+  &-hot {
+    &__title {
+      font-size: $font-ml;
+      font-weight: bold;
+      color: $color-secondary;
+      padding: $space-primary;
+    }
+    &__content {
+      padding: 0 3.5vw 3.5vw;
+    }
+  }
+}
+// 会员
+.supervip-index {
+  position: relative;
+  &-header {
+    position: relative;
+    padding-bottom: $space-lg;
+    color: $background-yellow;
+    img {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      z-index: -1;
+    }
+    &__content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .sub-title {
+        padding-top: $space-primary;
+        font-size: $font-ml;
+      }
+      .title {
+        font-size: $font-sm * 3;
+        span {
+          font-size: $font-size * 2;
+          color: $color-error;
+        }
+      }
+      .small {
+        color: $color-dark-yellow;
+        border-radius: 4vw;
+        padding: 3px $space-sm;
+        font-size: $font-size-auto * 0.9;
+        margin: $space-xs 0 $space-primary;
+        box-shadow: inset 0 0 $space-xs #000;
+      }
+    }
+  }
+  .v-button--svip {
+    font-size: $font-ml;
+    padding: $space-xs + 1 $space-primary * 5;
+    border-radius: 6vw;
+    .font-small {
+      font-size: $font-size;
+    }
+    .font-large {
+      font-size: $font-lg + 4;
+      vertical-align: sub;
+    }
+    .opacity {
+      opacity: .5;
+      text-decoration-line: line-through;
+    }
+  }
+  &-privilege {
+    padding: $space-xs $space-md 15vh;
+    margin-top: $space-xs;
+    &-frame {
+      padding: $space-md $space-primary + 2 $space-primary + 2;
+      border-radius: $space-sm;
+      box-shadow: 0 $space-xs $space-xs $color-border-base;
+      margin-bottom: $space-primary;
+      &__title {
+        font-size: $font-ml;
+        .flag {
+          font-size: $font-md;
+          background-color: $color-warning;
+          color: $color-text-brown;
+          padding: $space-xs - 2;
+          border-radius: 4px;
+        }
+        .subtitle {
+          font-size: $font-sm;
+          color: $color-info;
+          margin-top: $space-xs;
+        }
+      }
+      .privi1 {
+        display: flex;
+        justify-content: space-evenly;
+        padding-top: 20px;
+        .item {
+          width: 100%;
+          margin-right: 10px;
+          border-radius: 4px;
+          text-align: center;
+          p.money {
+            background-color: $color-light-yellow;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            padding: $space-primary 0 $space-xs;
+            color: $color-error;
+            font-size: $font-ml;
+            span {
+              font-size: $font-sm * 3;
+            }
+          }
+          p.info {
+            background-color: $color-light-yellow;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            font-size: $font-size-auto * 0.9;
+            padding: $space-xs 0 $space-sm;
+            color: $color-text-brown;
+          }
+        }
+      }
+      .privi2 {
+        margin-top: $space-primary + 2;
+        .van-swipe {
+          padding-bottom: 3.3vh;
+          .van-swipe-item {
+            .van-grid-item {
+              background-color: #fff;
+              .van-grid-item__content {
+                background-color: $color-white-yellow;
+                margin: $space-sm $space-sm 0 0;
+                font-size: $font-sm;
+                height: auto;
+                border-radius: 4px;
+                div.img {
+                  width: 16vw;
+                  height: 16vw;
+                  border-radius: 4px;
+                  overflow: hidden;
+                  img {
+                    width: 100%;
+                  }
+                }
+                div.info {
+                  color: $color-text-brown;
+                  .price {
+                    color: $color-error;
+                    .font-large {
+                      font-size: $font-lg;
+                    }
+                  }
+                }
+              }
+              &:nth-child(3n) {
+                .van-grid-item__content {
+                  margin-right: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+      // 轮播指示器
+      .van-swipe__indicators {
+        bottom: $space-primary;
+        .van-swipe__indicator {
+          width: $space-sm;
+          height: 1px;
+          background-color: $color-secondary;
+        }
+        .van-swipe__indicator--active {
+          background-color: $color-dark-yellow !important;
+        }
+      }
+      p.footer {
+        font-size: $font-sm;
+        color: $color-info;
+      }
+      .privi3 {
+        display: flex;
+        justify-content: space-between;
+        margin-top: $space-md;
+        .item {
+          border: 1px solid $color-text-brown;
+          border-radius: 4px;
+          width: 48%;
+          text-align: center;
+          padding: $space-sm $space-sm $space-primary;
+          box-sizing: border-box;
+          color: $color-text-brown;
+          .gold {
+            font-size: $font-size-auto * 0.9;
+            i {
+              vertical-align: middle;
+              font-size: 14px;
+              margin-right: 3px;
+            }
+            .count {
+              color: $color-error;
+            }
+          }
+          .money {
+            background-color: $color-light-yellow;
+            display: -webkit-flex;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: $space-primary $space-lg $space-primary $space-primary;
+            margin-top: $space-sm;
+            .num {
+              color: $color-error;
+              .font-lg {
+                font-size: $font-size-auto * 1.7;
+              }
+              position: relative;
+              &::after, &::before {
+                content: '';
+                width: 5px;
+                height: 5px;
+                background-color: #fff;
+                border-radius: 50%;
+                position: absolute;
+                transform: translate(150%, -50%);
+                top: -10px;
+                left: 100%;
+              }
+              &::after {
+                transform: translate(150%, 150%);
+                top: 100%;
+              }
+            }
+          }
+        }
+      }
+      .privi4 {
+        .van-swipe {
+          margin-top: $space-md;
+          .van-swipe__track {
+            .van-swipe-item {
+              padding-bottom: 2vh;
+              .van-grid {
+                .van-grid-item {
+                  margin-bottom: 2vh;
+                  .van-grid-item__content {
+                    display: block;
+                    padding: 0;
+                    .img {
+                      position: relative;
+                      height: 17vh;
+                      overflow: hidden;
+                      border-radius: 4px;
+                      img {
+                        width: 100%;
+                      }
+                      .vipdiscount {
+                        position: absolute;
+                        bottom: 0;
+                        background-color: $color-error;
+                        color: #fff;
+                        border-radius: 4px;
+                        font-size: $font-md;
+                      }
+                    }
+                    .title {
+                      font-size: 0.94em;
+                      margin-top: $space-xs;
+                    }
+                    .price {
+                      .bold {
+                        .font-large {
+                          font-size: $font-size-auto * 1.5;
+                        }
+                      }
+                      .old-price {
+                        text-decoration-line: line-through;
+                        color: $color-info;
+                      }
+                    }
+                  }
+                  .van-grid-item__content--center {
+                    align-items: normal;
+                  }
+                  &:nth-child(2n) {
+                    .van-grid-item__content {
+                      padding-left: $space-xs;
+                    }
+                  }
+                  &:nth-child(2n-1) {
+                    .van-grid-item__content {
+                      padding-right: $space-xs;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .privi5 {
+        .img {
+          width: 40%;
+          margin: $space-md auto $space-primary;
+          img {
+            width: 100%;
+          }
+        }
+        .privi5-footer {
+          font-size: $font-md;
+        }
+      }
+    }
+  }
+  &-svip-button {
+    width: 93vw;
+    position: fixed;
+    bottom: 4vh;
+    left: 3.5vw;
+    .v-button--svip {
+      box-sizing: border-box;
+    }
+  }
+}
+// svip底部按钮动画
+.svipBtn-enter, .svipBtn-leave-to {
+  position: absolute;
+  bottom: -4vh;
+}
+.svipBtn-enter-active, .svipBtn-leave-active {
+  position: fixed;
+  transition: all .5s linear;
+}
+.font-sm {
+  font-size: $font-sm;
+}
+.font-lg {
+  font-size: $font-lg;
+}
+
+// food
+.food-index {
+  font-family: PingFang SC,Helvetica Neue,Arial,sans-serif;
+  &-header {
+    background-color: $color-light;
+    height: 15vh;
+    position: relative;
+    i {
+      position: absolute;
+      left: $space-sm;
+      top: $space-xs;
+      font-size: $font-size-auto * 1.5;
+      color: #fff;
+    }
+    img {
+      width: 12vh;
+      margin-top: 5vh;
+    }
+  }
+  &-wrap {
+    padding: 3vh 6vh 2vh;
+    font-size: $font-md;
+    .van-cell {
+      padding-bottom: $space-xs;;
+      .van-cell__value {
+        text-align: center;
+        .row-title {
+          font-size: $font-size-auto * 1.25;
+          justify-content: center;
+          align-items: center;
+          h3.title {
+            max-width: 80vh;
+          }
+          i {
+            font-size: $font-ml;
+          }
+        }
+        .info {
+          font-size: $font-md;
+          span:not(last-child) {
+            margin-right: $space-primary;
+          }
+        }
+      }
+    }
+    .title-popup {
+      text-align: center;
+      background-color: transparent;
+      padding-bottom: 4vh;
+      .title-popup__content {
+        width: 80vw;
+        overflow: hidden;
+        border-radius: 4px;
+        padding: 3.5vh 0;
+        .title {
+          font-size: $font-size-auto * 1.5;
+          padding: 0 $space-primary;
+        }
+        ul {
+          display: flex;
+          justify-content: space-around;
+          text-align: center;
+          margin-top: $space-lg;
+          li {
+            font-size: $font-size;
+            span {
+              font-size: $font-md;
+              color: $color-info;
+            }
+          }
+        }
+        .notice-title {
+          font-size: $font-md;
+          color: $color-info;
+          margin: $space-md 0 $space-primary;
+          overflow: auto;
+          &::after, &::before {
+            content: '';
+            transform: translate(0, );
+            display: inline-block;
+            width: $space-md;
+            height: 1px;
+            position: relative;
+            top: -3px;
+            background-image: linear-gradient(45deg, $color-light, $color-secondary);
+            margin-right: $space-xs;
+          }
+          &::after {
+            background-image: linear-gradient(45deg, $color-secondary, $color-light);
+            margin-left: $space-xs;
+          }
+        }
+        .notice-content {
+          max-height: 15vh;
+          font-size: $font-size - 1;
+          line-height: 1.5;
+          overflow: auto;
+          margin: 0 $space-lg;
+        }
+      }
+      i {
+        font-size: $font-lg;
+        position: relative;
+        top: 30px;
+        font-size: $font-ml * 2;
+        left: 0;
+      }
+    }
+    &-coupons {
+      display: flex;
+      justify-content: center;
+      &__item {
+        &:first-child {
+          margin-right: $space-primary;
+        }
+        color: $color-dark-yellow;
+        width: 38vw;
+        background-color: $color-light-yellow;
+        align-items: center;
+        justify-content: space-around;
+        .description {
+          padding: 2px 0;
+          margin-left: $space-md;
+          align-items: center;
+          .money {
+            .large {
+              font-size: $font-ml;
+            }
+          }
+          .text {
+            align-items: center;
+            margin-left: $space-primary;
+          }
+        }
+        .get-coupon {
+          position: relative;
+          &::after, &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 4px;
+            height: 4px;
+            top: -6px;
+            left: -10px;
+            border-radius: 50%;
+            background-color: #fff;
+          }
+          &::after {
+            top: 17px;
+          }
+        }
+      }
+      .van-popup {
+        height: 50%;
+        padding: $space-primary $space-primary 0;
+        box-sizing: border-box;
+        .coupon-item__title {
+          font-size: $font-ml;
+        }
+        .desc {
+          margin: $space-md 0 $space-primary;
+          .light {
+            color: $color-info;
+            font-weight: normal;
+            margin-left: $space-primary;
+          }
+        }
+        .coupon {
+          border: $border;
+          width: 100%;
+          display: flex;
+          line-height: 45px;
+          justify-content: space-between;
+          margin-bottom: $space-primary;
+          &-left {
+            position: relative;
+            &::after, &::before {
+              content: '';
+              display: block;
+              width: $space-primary;
+              height: $space-primary;
+              border-radius: 50%;
+              background-color: #fff;
+              position: absolute;
+              top: 100%;
+              left: 100%;
+              transform: translate(-50%, -50%);
+              border-top: $border;
+            }
+            &::after {
+              top: 0;
+              border-top: none;
+              border-bottom: $border;
+            }
+            display: flex;
+            align-items: center;
+            .money {
+              font-size: $font-ml;
+              margin-left: $space-md;
+              .large {
+                font-size: $font-lg + $font-md;
+              }
+            }
+            .text {
+              line-height: 7vw;
+              padding: $space-primary $space-md * 2 $space-primary $space-md;
+              border-right: 1px solid $color-border-base;
+              .bold {
+                font-size: $font-ml;
+              }
+            }
+          }
+          &-right {
+            text-align: center;
+            line-height: 2;
+            width: 26%;
+            button {
+              border-radius: 6vw;
+              border: none;
+              background-color: $color-dark-yellow;
+              color: $color-light-yellow;
+              font-size: $font-size;
+              font-weight: bold;
+              margin: 32px 0;
+              padding: 0 20px;
+            }
+          }
+        }
+        .coupon1 {
+          background-color: $background-yellow;
+        }
+        i {
+          font-size: $font-size-auto * 2;
+          top: $space-primary;
+        }
+      }
+    }
+    &-activities {
+      &__title {
+        margin-top: $space-primary;
+        .activity {
+          display: inline-block;
+          width: 80%;
+        }
+        .subtract {
+          color: $color-error;
+          span {
+            font-size: $font-sm;
+            display: inline-block;
+            border: 1px solid $color-light-yellow;
+            padding: 1px $space-xs;
+            &:not(:last-child) {
+              margin-right: $space-xs;
+            }
+          }
+        }
+        .float--right {
+          color: $color-info;
+          .triangle {
+            border-top-color: $color-info;
+            margin-left: $space-xs;
+            top: $space-primary;
+          }
+        }
+      }
+      .van-popup {
+        padding: $space-lg $space-md * 2 $space-md;
+        box-sizing: border-box;
+        .activities__title {
+          font-size: $font-size-auto * 1.2;
+          margin-bottom: $space-primary;
+        }
+        .activities__content {
+          font-size: $font-md;
+          height: 50vw;
+          overflow: auto;
+          div {
+            &:not(:last-child) {
+              margin-bottom: $space-primary;
+            }
+            .iconName {
+              display: inline-block;
+              color: $color-error;
+              font-size: $font-sm;
+              padding: 0 3px;
+              border: 1px solid $color-light-yellow;
+              margin-right: $space-xs;
+            }
+          }
+        }
+        i {
+          top: $space-primary;
+          right: $space-primary;
+          font-size: $font-md * 2;
+        }
+      }
+    }
+    .notice {
+      margin-top: $space-xs;
+      color: $color-info;
+    }
+  }
+  &-nav {
+    .van-tabs {
+      .van-tabs__nav {
+        .van-tab {
+          font-size: $font-ml;
+        }
+        .van-tab--active {
+          font-weight: bold;
+        }
+        .van-tabs__line {
+          background-color: $color-primary;
+          border-radius: none;
+          height: .6vw;
+        }
+      }
+    }
+  }
+}
+// food “点餐”子组件
+.foodOrder-index {
+  background-color: #fff;
+  .sign { // 招牌
+    position: absolute;
+    top: 0;
+    color: #fff;
+    background-color: $color-warning;
+    padding: 0px 3px;
+    font-size: $font-sm;
+    font-weight: 600;
+  }
+  .sold-out { // 已售完
+    color: $color-info;
+    font-size: $font-size-auto * 0.9;
+  }
+  &-recommend {
+    padding-bottom: $space-lg;
+    &__title {
+      font-size: $font-ml;
+      padding: $space-md 0 $space-primary $space-md;
+    }
+    &__content {
+       // 可滑动
+      display: -webkit-box;
+      overflow-x: auto;
+      overflow-y: hidden; // 元素可随页面滚动/滑动
+      /*适应苹果*/
+      -webkit-overflow-scrolling: touch;
+      // 隐藏滚动条
+      &::-webkit-scrollbar{
+        display: none;
+      }
+      padding: 0 $space-primary;
+      .recommend-item {
+        display: block;
+        padding-right: $space-primary;
+        .recommend-item__inner {
+          line-height: 1.5;
+          width: 32vw;
+          img {
+            width: 100%;
+          }
+          .small {
+            font-size: $font-sm;
+            color: $color-info;
+          }
+          .footer {
+            justify-content: space-between;
+            .price {
+              color: $color-error;
+              .large {
+                font-size: $font-lg;
+              }
+            }
+          }
+        }
+      }
+      .van-popup {
+        height: 82vh;
+        .food-panel {
+          padding: $space-md;
+          height: 100%;
+          flex-direction: column;
+          justify-content: space-between;
+          box-sizing: border-box;
+          .header {
+            img {
+              width: 27vw;
+            }
+            .info {
+              flex: 1;
+              margin-left: $space-primary;
+              position: relative;
+              .title {
+                padding: 0;
+                font-size: $font-ml;
+                margin-bottom: $space-xs;
+              }
+              .select {
+                font-size: $font-md;
+                margin-bottom: $space-xs;
+              }
+              .price {
+                position: absolute;
+                bottom: 0;
+                font-size: $font-lg;
+                color: $color-error;
+                .large {
+                  font-size: $font-size-auto * 1.4;
+                }
+              }
+            }
+          }
+          button {
+            height: 40px;
+            font-size: $font-ml;
+            border-radius: 2px;
+          }
+        }
+      }
+    }
+  }
+  &-content {
+    height: 100%;
+    position: sticky;
+    top: 44px;
+    .van-sticky {
+      height: 100%;
+    }
+    .inner-container {
+      height: 100%;
+      overflow: hidden;
+      display: flex;
+      .foodMenu-sidebar {
+        height: calc(100vh);
+        width: 100%;
+        overflow: auto;
+        background-color: $background-color;
+        .van-sidebar-item {
+          padding: $space-md $space-sm;
+          font-size: $font-md;
+          background-color: $background-color;
+          color: $color-info;
+          .van-sidebar-item__text {
+            width: 100%;
+          }
+          &:last-child {
+            padding-bottom: 40vw;
+          }
+        }
+        .van-sidebar-item--select {
+          color: $color-text-primary;
+          background-color: #fff;
+          border: none;
+        }
+        &::-webkit-scrollbar {
+          display: none;
+        }
+        .menuTag-hidden {
+          .van-sidebar-item__info {
+            display: none;
+          }
+        }
+        .menu-tag {
+          .van-sidebar-item__info {
+            top: - $space-xs;
+          }
+        }
+      }
+      .food-list {
+        height: calc(100vh - 44px - 48px);
+        overflow-y: hidden;
+        // flex: 1;
+        // position: relative;
+        // height: 100%;
+        // overflow-y: auto;
+        // padding: 0 $space-md 40vw $space-primary;
+        // font-size: $font-md;
+        // box-sizing: border-box;
+        .foodmenu {
+          &-title {
+            color: $color-info;
+            margin-top: $space-sm;
+            // position: sticky;
+            // top: 44px;
+            // background-color: #fff;
+            // z-index: 111;
+            &__tag {
+              margin-right: $space-xs;
+              font-weight: 900;
+            }
+          }
+          &-content {
+            &__item {
+              margin: $space-md 0;
+              position: relative;
+              .img {
+                position: relative;
+                width: 40%;
+                img {
+                  width: 100%;
+                }
+              }
+              .content {
+                flex: 1;
+                padding-left: $space-primary;
+                .title {
+                  font-size: $font-ml;
+                }
+                .info {
+                  font-size: $font-sm;
+                  color: $color-info;
+                  line-height: 2;
+                  .sale {
+                    margin-right: $space-sm;
+                  }
+                }
+                .quantity {
+                  background-color: $background-yellow;
+                  color: $color-error;
+                  font-size: $font-sm;
+                  padding: 1px;
+                }
+                .price, .add-goods, .sold-out {
+                  position: absolute;
+                  bottom: 0;
+                }
+                .price {
+                  color: $color-error;
+                  font-size: $font-ml;
+                }
+                .add-goods, .sold-out {
+                  right: 0;
+                }
+              }
+            }
+          }
+        }
+        .foodInfo-popup {
+          z-index: 100;
+          height: 100vh;
+          width: 100vw;
+          position: fixed;
+          top: 0;
+          left: 0;
+          transition: all .5s ease;
+          transform: translate(0, 0);
+          .closeFoodInfoPopup {
+            position: absolute;
+            right: $space-md;
+            top: $space-primary;
+            background: rgba(0, 0, 0, .1);
+            border-radius: 50%;
+            width: 7vw;
+            height: 7vw;
+            text-align: center;
+            i {
+              line-height: 7vw;
+            }
+          }
+          img {
+            width: 100%;
+          }
+          .text-container {
+            padding: $space-primary $space-md;
+            p {
+              margin-bottom: $space-sm;
+            }
+            .title {
+              font-size: $font-lg;
+              .sign {
+                position: relative;
+                top: -4px;
+                margin-right: $space-xs;
+              }
+            }
+            .price-line {
+              justify-content: space-between;
+              align-items: center;
+              .price {
+                color: $color-error;
+                font-size: $font-ml;
+              }
+            }
+          }
+        }
+        .popup-enter, .popup-leave-to {
+          transform: translate(0, 100vh);
+        }
+        .popup-enter-active, .popup-leave-active {
+          transition: all .3s linear;
+        }
+      }
+    }
+  }
+  &-footer {
+    position: fixed;
+    bottom: 0;
+    z-index: 100;
+    width: 100%;
+    &__discount-tip {
+      background-color: $color-light-yellow;
+      font-size: $font-md;
+      padding: 2px 0;
+      position: relative;
+      bottom: 12.8vw;
+      width: 100%;
+    }
+    .van-overlay {
+      z-index: -1!important;
+    }
+    .van-action-sheet {
+      max-height: 50vh;
+      overflow: auto;
+      z-index: 90!important;
+      position: relative;
+      bottom: 12.8vw;
+      .header {
+        font-size: $font-ml;
+        background: $background-color;
+        padding: $space-sm $space-md $space-sm $space-lg;
+        .small {
+          font-size: $font-size;
+          i {
+            font-size: $font-lg;
+            vertical-align: middle;
+          }
+        }
+      }
+      .food-list {
+        .item {
+          padding: $space-md;
+          font-size: $font-ml;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          &:last-child {
+            padding-bottom: 3.5vw; // 防止最后一个被购物车挡住
+          }
+          .name {
+            width: 45vw;
+          }
+          .price {
+            .small {
+              font-size: $font-sm;
+            }
+            color: $color-error;
+            text-align: right;
+            width: 15vw;
+          }
+          .van-stepper {
+            float: right;
+          }
+        }
+      }
+    }
+    &__bottomNav {
+      height: 12.8vw;
+      background-color: $color-secondary;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      z-index: 100;
+      .shopcar {
+        transform: translate(0, -25%);
+        margin-left: $space-md;
+        border-radius: 50%;
+        background-color: $color-secondary;
+        width: 14vw;
+        height: 14vw;
+        padding: $space-xs;
+        box-sizing: border-box;
+        box-shadow: 0 0 2px $color-text-primary;
+        .inner {
+          border-radius: 50%;
+          width: 100%;
+          height: 100%;
+          background: $color-text-primary;
+          i {
+            color: $color-text-gray;
+            font-size: 25px;
+            top: $space-sm;
+          }
+        }
+        .hasfood {
+          background-color: $color-primary;
+          i {
+            color: #fff;
+          }
+        }
+        .van-tag {
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
+      }
+      .info {
+        margin-left: $space-md;
+        flex: 1;
+        color: $color-text-gray;
+        padding: $space-xs 0;
+        .send-price {
+          font-size: $font-md;
+        }
+        .total-price {
+          color: #fff;
+          .line-through {
+            text-decoration: line-through;
+            color: $color-info;
+            font-size: $font-md;
+          }
+        }
+      }
+      .button {
+        width: 30vw;
+        font-size: 16px;
+        font-weight: bold;
+        color: #fff;
+        font-size: $font-ml;
+        .noGoods {
+          width: 100%;
+          height: 100%;
+          background: $color-secondary + 2;
+          border: none;
+        }
+        .settlement {
+          background-color: $color-success;
+          width: 100%;
+          height: 100%;
+          border: none;
+        }
+      }
+    }
+  }
+}
+// food “评价”子组件
+.foodComment-index  {
+  &-rateRow {
+    padding: 20px 15px 30px;
+    margin-bottom: $space-sm;
+    li {
+      font-size: $font-md;
+      display: inline-block;
+      margin: 0 $space-primary;
+      p {
+        margin-bottom: $space-xs;
+      }
+      .large {
+        font-size: $font-lg;
+      }
+    }
+    .rate {
+      font-size: 38px;
+      color: $color-error;
+    }
+    .taste {
+      margin-right: $space-lg;
+    }
+    .packing {
+      margin: 0 $space-lg;
+    }
+    .send {
+      margin-right: $space-lg;
+    }
+  }
+  &-content {
+    padding: $space-md $space-primary;
+    &__tagsBox {
+      padding: 0 $space-primary;
+      button {
+        border-radius: 2px;
+        border: none;
+        background: $color-light-blue;
+        padding: $space-xs $space-sm;
+        font-size: $font-md;
+        margin: 0 $space-sm $space-sm 0;
+      }
+      .active {
+        background-color: $color-primary;
+        color: #fff;
+      }
+      .bad {
+        background-color: $background-color;
+        color: $color-info;
+      }
+    }
+    &__tip {
+      margin: $space-md $space-lg 0;
+      color: $color-info;
+      i {
+        background-color: $color-success;
+        font-size: $font-sm;
+        color: #fff;
+        border-radius: 50%;
+        margin-right: $space-xs;
+      }
+    }
+    &__item {
+      margin: $space-md 0;
+      img {
+        width: 8vw;
+        height: 8vw;
+        border-radius: 50%;
+      }
+      .user {
+        margin-bottom: $space-lg;
+        margin-left: $space-primary;
+        flex: 1;
+        .uname {
+          font-size: $font-md;
+          margin-bottom: $space-sm;
+          .date {
+            font-size: $font-sm;
+            color: $color-info;
+          }
+        }
+        .rate {
+          .van-rate {
+            margin-right: $space-xs;
+          }
+          font-size: $font-sm;
+          .rate1, .rate2 {
+            color: $color-primary;
+          }
+          .rate3, .rate4 {
+            color: $color-orange;
+          }
+          .rate5 {
+            color: $color-error;
+          }
+        }
+        .comment {
+          margin: $space-xs 0 $space-primary;
+          .tag {
+            color: $color-primary;
+            margin-right: $space-xs;
+          }
+        }
+        .merchant-reply {
+          font-size: $font-size-auto * 0.9;
+          background: $background-color;
+          padding: $space-primary;
+          border-radius: 4px;
+          &::before {
+            content: '';
+            border: $space-sm solid transparent;
+            border-bottom-color: $background-color;
+            top: - $space-sm;
+            left: $space-sm;
+            transform: translate(0, -100%);
+            display: inline-block;
+            position: relative;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+// food “商家”子组件
+.foodStore-index {
+  font-size: $font-size-auto * 0.9;
+  section {
+    margin-bottom: $space-primary;
+    padding: $space-md;
+  }
+  .title {
+    font-size: $font-ml;
+    font-weight: bold;
+  }
+  &-brandStory {
+    line-height: 1.5;
+    &__img {
+      margin-bottom: $space-primary;
+      img {
+        width: 100%;
+      }
+    }
+    &__content {
+      margin-bottom: 6.5vw;
+    }
+  }
+  &-sendInfo {
+    &__title {
+      margin-bottom: $space-primary;
+    }
+    &__send-info {
+      line-height: 2.5;
+    }
+  }
+  &-services {
+    p {
+      margin-bottom: $space-md;
+    }
+    .tag {
+      border: $border;
+      padding: 1px 3px;
+      margin-right: $space-xs;
+      color: $color-info;
+    }
+  }
+  &-realScene {
+    &__title {
+      margin-bottom: $space-primary;
+    }
+    &__item {
+      position: relative;
+      margin-right: $space-sm;
+      width: 20vw;
+      height: 20vw;
+      display: inline-block;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+      p {
+        color: #fff;
+        position: absolute;
+        bottom: 0;
+        background: rgba(0, 0, 0, .3);
+        width: 100%;
+      }
+    }
+  }
+  &-info {
+    &__title {}
+    ul {
+      li {
+        &:not(:last-child) {
+          border-bottom: $border;
+        }
+        display: flex;
+        padding: $space-md $space-md $space-md 0;
+        justify-content: space-between;
+        margin-right: - $space-md;
+        align-items: center;
+        &:last-child {
+          padding: $space-md $space-md 0 0;
+        }
+        .address {
+          max-width: 60vw;;
+        }
+        .contact-merchant {
+          color: $color-primary;
+          i {
+            font-size: $font-size-auto * 1.8;
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+  }
+}
+

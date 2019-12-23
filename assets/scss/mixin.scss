@@ -1,0 +1,7 @@
+@mixin textColor {
+  @each $key, $color in $text-color{
+    .text--#{$key} {
+      color: $color;
+    }
+  }
+}
