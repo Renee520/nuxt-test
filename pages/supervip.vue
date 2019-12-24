@@ -2,7 +2,7 @@
   <div :class="prefixCls">
     <!-- header -->
     <div :class="`${prefixCls}-header`">
-      <img src="../assets/imgs/supervip/bg1.webp" alt="">
+      <img src="../static/imgs/supervip/bg1.webp" alt="">
       <div :class="`${prefixCls}-header__content`">
         <p class="sub-title">开通超级会员</p>
         <h3 class="title">每月领<span>￥20</span>专属红包</h3>
@@ -59,7 +59,7 @@
               <van-grid :border="false" :column-num="3">
                 <van-grid-item>
                   <div class="img">
-                    <img src="../assets/imgs/supervip/1.webp" alt="">
+                    <img src="../static/imgs/supervip/1.webp" alt="">
                   </div>
                   <p class="title text-overflow">避风塘（锦江店）</p>
                   <div class="info">
@@ -69,7 +69,7 @@
                 </van-grid-item>
                 <van-grid-item>
                   <div class="img">
-                    <img src="../assets/imgs/supervip/1.webp" alt="">
+                    <img src="../static/imgs/supervip/1.webp" alt="">
                   </div>
                   <p class="title text-overflow">避风塘（锦江店）</p>
                   <div class="info">
@@ -79,7 +79,7 @@
                 </van-grid-item>
                 <van-grid-item>
                   <div class="img">
-                    <img src="../assets/imgs/supervip/1.webp" alt="">
+                    <img src="../static/imgs/supervip/1.webp" alt="">
                   </div>
                   <p class="title text-overflow">避风塘（锦江店）</p>
                   <div class="info">
@@ -89,7 +89,7 @@
                 </van-grid-item>
                 <van-grid-item>
                   <div class="img">
-                    <img src="../assets/imgs/supervip/1.webp" alt="">
+                    <img src="../static/imgs/supervip/1.webp" alt="">
                   </div>
                   <p class="title text-overflow">避风塘（锦江店）</p>
                   <div class="info">
@@ -99,7 +99,7 @@
                 </van-grid-item>
                 <van-grid-item>
                   <div class="img">
-                    <img src="../assets/imgs/supervip/1.webp" alt="">
+                    <img src="../static/imgs/supervip/1.webp" alt="">
                   </div>
                   <p class="title text-overflow">避风塘（锦江店）</p>
                   <div class="info">
@@ -109,7 +109,7 @@
                 </van-grid-item>
                 <van-grid-item>
                   <div class="img">
-                    <img src="../assets/imgs/supervip/1.webp" alt="">
+                    <img src="../static/imgs/supervip/1.webp" alt="">
                   </div>
                   <p class="title text-overflow">避风塘（锦江店）</p>
                   <div class="info">
@@ -123,7 +123,7 @@
               <van-grid :border="false" :column-num="3">
                 <van-grid-item>
                   <div class="img">
-                    <img src="../assets/imgs/supervip/1.webp" alt="">
+                    <img src="../static/imgs/supervip/1.webp" alt="">
                   </div>
                   <p class="title text-overflow">避风塘（锦江店）</p>
                   <div class="info">
@@ -133,7 +133,7 @@
                 </van-grid-item>
                 <van-grid-item>
                   <div class="img">
-                    <img src="../assets/imgs/supervip/1.webp" alt="">
+                    <img src="../static/imgs/supervip/1.webp" alt="">
                   </div>
                   <p class="title text-overflow">避风塘（锦江店）</p>
                   <div class="info">
@@ -143,7 +143,7 @@
                 </van-grid-item>
                 <van-grid-item>
                   <div class="img">
-                    <img src="../assets/imgs/supervip/1.webp" alt="">
+                    <img src="../static/imgs/supervip/1.webp" alt="">
                   </div>
                   <p class="title text-overflow">避风塘（锦江店）</p>
                   <div class="info">
@@ -153,7 +153,7 @@
                 </van-grid-item>
                 <van-grid-item>
                   <div class="img">
-                    <img src="../assets/imgs/supervip/1.webp" alt="">
+                    <img src="../static/imgs/supervip/1.webp" alt="">
                   </div>
                   <p class="title text-overflow">避风塘（锦江店）</p>
                   <div class="info">
@@ -163,7 +163,7 @@
                 </van-grid-item>
                 <van-grid-item>
                   <div class="img">
-                    <img src="../assets/imgs/supervip/1.webp" alt="">
+                    <img src="../static/imgs/supervip/1.webp" alt="">
                   </div>
                   <p class="title text-overflow">避风塘（锦江店）</p>
                   <div class="info">
@@ -173,7 +173,7 @@
                 </van-grid-item>
                 <van-grid-item>
                   <div class="img">
-                    <img src="../assets/imgs/supervip/1.webp" alt="">
+                    <img src="../static/imgs/supervip/1.webp" alt="">
                   </div>
                   <p class="title text-overflow">避风塘（锦江店）</p>
                   <div class="info">
@@ -230,7 +230,7 @@
               <van-grid :border="false" :column-num="2">
                 <van-grid-item>
                   <div class="img">
-                    <img src="../assets/imgs/supervip/2.webp" alt="">
+                    <img src="../static/imgs/supervip/2.webp" alt="">
                     <p class="vipdiscount">会员专享5折</p>
                   </div>
                   <p class="title text-overflow">小炒鸡丁拼剁椒茄子套餐</p>
@@ -241,7 +241,7 @@
                 </van-grid-item>
                 <van-grid-item>
                   <div class="img">
-                    <img src="../assets/imgs/supervip/2.webp" alt="">
+                    <img src="../static/imgs/supervip/2.webp" alt="">
                     <p class="vipdiscount">会员专享5折</p>
                   </div>
                   <p class="title text-overflow">小炒鸡丁拼剁椒茄子套餐</p>
@@ -252,7 +252,7 @@
                 </van-grid-item>
                 <van-grid-item>
                   <div class="img">
-                    <img src="../assets/imgs/supervip/2.webp" alt="">
+                    <img src="../static/imgs/supervip/2.webp" alt="">
                     <p class="vipdiscount">会员专享5折</p>
                   </div>
                   <p class="title text-overflow">小炒鸡丁拼剁椒茄子套餐</p>
@@ -263,7 +263,7 @@
                 </van-grid-item>
                 <van-grid-item>
                   <div class="img">
-                    <img src="../assets/imgs/supervip/2.webp" alt="">
+                    <img src="../static/imgs/supervip/2.webp" alt="">
                     <p class="vipdiscount">会员专享5折</p>
                   </div>
                   <p class="title text-overflow">小炒鸡丁拼剁椒茄子套餐</p>
@@ -278,7 +278,7 @@
               <van-grid :border="false" :column-num="2">
                 <van-grid-item>
                   <div class="img">
-                    <img src="../assets/imgs/supervip/2.webp" alt="">
+                    <img src="../static/imgs/supervip/2.webp" alt="">
                     <p class="vipdiscount">会员专享5折</p>
                   </div>
                   <p class="title text-overflow">小炒鸡丁拼剁椒茄子套餐</p>
@@ -289,7 +289,7 @@
                 </van-grid-item>
                 <van-grid-item>
                   <div class="img">
-                    <img src="../assets/imgs/supervip/2.webp" alt="">
+                    <img src="../static/imgs/supervip/2.webp" alt="">
                     <p class="vipdiscount">会员专享5折</p>
                   </div>
                   <p class="title text-overflow">小炒鸡丁拼剁椒茄子套餐</p>
@@ -300,7 +300,7 @@
                 </van-grid-item>
                 <van-grid-item>
                   <div class="img">
-                    <img src="../assets/imgs/supervip/2.webp" alt="">
+                    <img src="../static/imgs/supervip/2.webp" alt="">
                     <p class="vipdiscount">会员专享5折</p>
                   </div>
                   <p class="title text-overflow">小炒鸡丁拼剁椒茄子套餐</p>
@@ -311,7 +311,7 @@
                 </van-grid-item>
                 <van-grid-item>
                   <div class="img">
-                    <img src="../assets/imgs/supervip/2.webp" alt="">
+                    <img src="../static/imgs/supervip/2.webp" alt="">
                     <p class="vipdiscount">会员专享5折</p>
                   </div>
                   <p class="title text-overflow">小炒鸡丁拼剁椒茄子套餐</p>
@@ -334,7 +334,7 @@
         </div>
         <div :class="`${prefixCls}-privilege-frame__content privi5`">
           <div class="img">
-            <img src="../assets/imgs/supervip/3.webp" alt="">
+            <img src="../static/imgs/supervip/3.webp" alt="">
           </div>
           <p class="privi5-footer">超级会员享有24小时客服专线，配有专属客服，竭诚提供更专业、更优质的服务</p>
         </div>

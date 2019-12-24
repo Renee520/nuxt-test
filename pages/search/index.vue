@@ -46,6 +46,9 @@ export default {
       shopOrGoods: '',
     };
   },
+  layout(context) {
+    return 'index';
+  },
   computed: {},
   watch: {},
   methods: {

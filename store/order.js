@@ -5,21 +5,22 @@ import types from './mutations-type';
 
 Vue.use(Vuex);
 
-export default {
-  state: {
-    foods: [],
-  },
-  mutations: {
-    [types.FOODS_INFO](state, data) {
-      state.foods = data;
-    },
-  },
-  actions: {
-    saveFoods({commit}, data) {
-      commit(types.FOODS_INFO, data);
-    }
-  },
-  getters: {
-    foods: state => state.foods,
+const state = () => ({
+  foods: [],
+});
+const mutations = {
+  [types.FOODS_INFO](state, data) {
+    state.foods = data;
   },
 };
+
+const actions = {
+  saveFoods({commit}, data) {
+    commit(types.FOODS_INFO, data);
+  }
+};
+const getters = {
+  foods: state => state.foods,
+};
+
+export default { state, mutations: actions, getters}

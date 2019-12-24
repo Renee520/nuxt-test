@@ -40,14 +40,14 @@ module.exports = {
   },
   modules: [
     'nuxt-sass-resources-loader',
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/proxy'
   ],
   css: ['~assets/scss/index.scss'],
 
   plugins: [
     { src: '~plugins/vant.js', ssr: true },
     '~plugins/axios',
-    '@/plugins/router'
   ],
   proxy: {
     '/restapi': {  //使用"/api"来代替"localhost：8080" 

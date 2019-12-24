@@ -11,6 +11,9 @@ export default {
       prefixCls,
     };
   },
+  layout(context) {
+    return 'index';
+  },
   computed: {},
   watch: {},
   methods: {

@@ -74,7 +74,7 @@ export default {
         this.city = this.inputcity;
         this.cityflag = true;
         // 将city存入store
-        this.$store.dispatch('saveCity', this.city).then(
+        this.$store.dispatch('user/saveCity', this.city).then(
           () => {
             localStorage.setItem('city', JSON.stringify(this.city)); // 将city存入本地
           },
@@ -87,6 +87,7 @@ export default {
     },
   },
   created() {
+    console.log('44444444', this.$store)
     let store = this.$store.state.user;
     // 从store中取出city
     if (store.city) {

@@ -28,9 +28,9 @@
 <script>
 const prefixCls = 'login';
 
-// import moment from 'moment';
+import moment from 'moment';
 import { isMobile } from '@/utils/util';
-// import { sendCode, login } from '../apis';
+import { sendCode, login } from '../apis';
 export default {
   // components: {
   //   // vButton,
@@ -131,10 +131,14 @@ export default {
           }
           // 如果请求成功
           // 为user数据添加创建时间
+          console.log(res)
+          if (res.user.date === 'undefined') {
+            res.user.date = '';
+          }
           res.user.date = moment().format('YYYY-MM-DD HH:mm:ss'); 
           console.log(res.user.date);
           // 将user数据存入store中
-          this.$store.dispatch('saveUser', res.user).then(
+          this.$store.dispatch('user/saveUser', res.user).then(
             () => {
               console.log('data have been stored in store', res.user);
               localStorage.setItem('user', JSON.stringify(res.user)); // 将数据存入本地
@@ -157,6 +161,9 @@ export default {
     }
   },
   created() {
+    sendCode({
+        mobile: 'that.mobile',
+      })
     // this.$axios.get('/restapi/bgs/poi/search_poi_nearby_alipay?keyword=上海&offset=0&limit=20').then(
     //   r => {
     //     console.log(r);

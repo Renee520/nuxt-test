@@ -3,7 +3,7 @@
     <!-- header -->
     <div :class="`${prefixCls}-header float`" @click="go2Login()">
       <div :class="`${prefixCls}-header__img float--left`">
-        <img src="../../assets/imgs/user/logo.png" alt="">
+        <img src="~/static/imgs/user/logo.png" alt="">
       </div>
       <div :class="`${prefixCls}-header__title float--left`">
         <h3 v-if="!user">登录/注册</h3>
@@ -21,11 +21,11 @@
     <!-- 红包 -->
     <div :class="`${prefixCls}-money flex box`">
       <div class="flex-item text--center">
-        <p><img src="../../assets/imgs/user/icon1.jpg" alt=""></p>
+        <p><img src="~/static/imgs/user/icon1.jpg" alt=""></p>
         <p class="font-sm">红包</p>
       </div>
       <div class="flex-item text--center">
-        <p><img src="../../assets/imgs/user/icon2.jpg" alt=""></p>
+        <p><img src="~/static/imgs/user/icon2.jpg" alt=""></p>
         <p class="font-sm">金币</p>
       </div>
     </div>
@@ -34,36 +34,36 @@
       <van-cell-group>
         <van-cell title="我的地址" is-link>
           <div slot="icon">
-            <img src="../../assets/imgs/user/icon3.jpg" alt="">
+            <img src="~/static/imgs/user/icon3.jpg" alt="">
           </div>
         </van-cell>
       </van-cell-group>
       <van-cell-group>
         <van-cell title="金币商城" is-link>
           <div slot="icon">
-            <img src="../../assets/imgs/user/icon4.jpg" alt="">
+            <img src="~/static/imgs/user/icon4.jpg" alt="">
           </div>
         </van-cell>
         <van-cell title="分享拿20元现金" is-link>
           <div slot="icon">
-            <img src="../../assets/imgs/user/icon5.jpg" alt="">
+            <img src="~/static/imgs/user/icon5.jpg" alt="">
           </div>
         </van-cell>
       </van-cell-group>
       <van-cell-group>
         <van-cell title="金币商城" is-link>
           <div slot="icon">
-            <img src="../../assets/imgs/user/icon6.jpg" alt="">
+            <img src="~/static/imgs/user/icon6.jpg" alt="">
           </div>
         </van-cell>
         <van-cell title="下载饿了么APP" is-link>
           <div slot="icon">
-            <img src="../../assets/imgs/user/icon7.jpg" alt="">
+            <img src="~/static/imgs/user/icon7.jpg" alt="">
           </div>
         </van-cell>
         <van-cell title="规则中心" is-link>
           <div slot="icon">
-            <img src="../../assets/imgs/user/icon8.jpg" alt="">
+            <img src="~/static/imgs/user/icon8.jpg" alt="">
           </div>
         </van-cell>
       </van-cell-group>
@@ -82,6 +82,9 @@ export default {
       prefixCls,
       user: null,
     };
+  },
+  layout(context) {
+    return 'index';
   },
   computed: {},
   watch: {},

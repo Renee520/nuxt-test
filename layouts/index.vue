@@ -1,5 +1,6 @@
 <template>
   <div >
+    <nuxt/>
   <van-tabbar :class="prefixCls" v-model="active" @change="onChange" style="z-index:1000;">
     <van-tabbar-item name="0" :icon="active !== '0' ? 'wap-home-o' : 'wap-home'">首页</van-tabbar-item>
       <van-tabbar-item name="1" :icon="active !== '1' ? 'eye-o' : 'eye'">发现</van-tabbar-item>
@@ -26,10 +27,7 @@ export default {
       switch (event) {
         case '0': // 首页
           this.$router.replace({
-            name: 'home',
-            params: {
-              test: true,
-            }
+            path: '/',
           });
           break;
         case '1': // 发现

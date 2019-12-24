@@ -3,7 +3,7 @@
     <!-- header -->
     <div :class="`${prefixCls}-header text--center`">
       <van-icon name="arrow-left" @click="backToHome" />
-      <img :class="`${prefixCls}-header__img`" src="../../assets/imgs/food/header.webp" alt />
+      <img :class="`${prefixCls}-header__img`" src="~/static/imgs/food/header.webp" alt />
     </div>
     <!-- wrap -->
     <div :class="`${prefixCls}-wrap box text-center`">
@@ -147,9 +147,9 @@
 <script>
 const prefixCls = "food-index";
 import { getStoreById } from '../../apis'
-import FoodStore from '../../components/FoodStore.vue'
-import FoodComment from '../../components/FoodComment.vue'
-import FoodOrder from '../../components/FoodOrder.vue'
+import FoodStore from '@/components/FoodStore.vue'
+import FoodComment from '@/components/FoodComment.vue'
+import FoodOrder from '@/components/FoodOrder.vue'
 
 export default {
   data() {

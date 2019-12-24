@@ -1,11 +1,13 @@
-import axios from './plugins/axios';
+// import axios from 'axios';
+// import axios from '@/plugins/axios';
 
 function login(params) {
   return axios.post('/elm/user/login', params);
 }
 
 function sendCode(params) {
-  return axios.post('/elm/sendCode', params);
+  console.log($axios)
+  // return axios.post('/elm/sendCode', params);
 }
 
 function getStores(params) {

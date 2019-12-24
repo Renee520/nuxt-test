@@ -95,7 +95,7 @@ export default {
       this.$emit('getAddrObjFromShowAddr', this.address, this.addressflag);
       // 将address存入store
       if (this.addressflag) {
-        this.$store.dispatch('saveAddress', this.address).then(
+        this.$store.dispatch('user/saveAddress', this.address).then(
           () => {
             localStorage.setItem('address', JSON.stringify(this.address)); // 存入本地
           },
@@ -141,7 +141,7 @@ export default {
     if (store.user) {
       this.user = store.user;
     }
-    console.log(store);
+    console.log(this.$store);
     if (store.city) {
       this.city = store.city;
       this.cityflag = true; 
