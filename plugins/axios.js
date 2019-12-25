@@ -43,7 +43,6 @@ export default function ({ $axios, redirect }) {
     }
   );
 
-  window.$axios = $axios;
 
   // $axios.onError(error => {
   //   const code = parseInt(error.response && error.response.status)
